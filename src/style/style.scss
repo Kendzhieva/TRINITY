@@ -1,0 +1,34 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+body{
+    background-color: #2B2B2B;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+ul, ol{
+    list-style:none;
+}
+
+a{
+    color: inherit;
+}
+
+img{
+    width: 100%;
+}
+
+//базовые 
+@import "_mixins.scss";
+@import "_ui-kit.scss";
+//секции
+@import "_header.scss"
