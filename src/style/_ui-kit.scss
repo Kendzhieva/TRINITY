@@ -22,7 +22,99 @@
         }
         &--secondary{
             background: transparent;
-            border: 1px solid #33B7BC;
+            border: 2px solid #33B7BC;
+        }
+    }
+    &__input{
+        @include font ('Stolzl', normal, 400, 14px, 0, #fff);
+        padding: 16px 0 16px 30px;
+        background: linear-gradient(90.75deg, #1C1C1C 0.65%, rgba(27, 27, 27, 0.4) 107.06%);
+        border-radius: 10px;
+        border: 2px solid;
+        border-color: #434343;
+        &::placeholder{
+            color: #707070;
+        }
+        &:hover{
+            color: #C0C0C0;
+            border-color: #505050;
+        }
+        &:focus{
+            border-color: #33B7BC;
+            color: #fff;
+        }
+        &:invalid{
+            border-color: #D34B4B;
+            color: #D34B4B;
+        }
+        &:disabled{
+            opacity: 0.5;
+        }
+    }
+    &__select{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        gap: 10px;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+        &-dropdown{
+            min-width: 188px;
+            position: absolute;
+            top: calc(100% + 20px);
+            right: 0;
+            background: rgba(32, 32, 32, 0.4);
+            border: 1px solid #313131;
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            opacity: 0;
+            transform: scale(0);
+            flex-direction: column;
+            gap: 30px;
+            &-item{
+                position: relative;
+                @include font ('Stolzl', normal, 500, 15px, none, #fff);
+                &:hover{
+                    color: #33B7BC;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    height: 1px;    
+                    width: 100%;
+                    top: calc(100% + 15px);
+                    right: 0;
+                    left: 0;
+                    background-color: #323232;
+                }
+                &:last-child{
+                    &::before{
+                        content: none;
+                    }
+                }
+            }
+        }
+        &:hover{
+            & > span{
+                transform: rotate(180deg);
+                & > svg{
+                    & > * {
+                        fill:#33B7BC;
+                    }
+                }
+            }
+            .ui__select-dropdown{
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     }
 }

@@ -15,16 +15,33 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
 ul, ol {
   list-style: none;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img {
   width: 100%;
+}
+
+.container-big {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container-min {
+  max-width: 1840px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .ui__button {
@@ -55,5 +72,196 @@ img {
 }
 .ui__button--secondary {
   background: transparent;
-  border: 1px solid #33B7BC;
+  border: 2px solid #33B7BC;
+}
+.ui__input {
+  font-family: "Stolzl";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0;
+  color: #fff;
+  padding: 16px 0 16px 30px;
+  background: linear-gradient(90.75deg, #1C1C1C 0.65%, rgba(27, 27, 27, 0.4) 107.06%);
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #434343;
+}
+.ui__input::-moz-placeholder {
+  color: #707070;
+}
+.ui__input::placeholder {
+  color: #707070;
+}
+.ui__input:hover {
+  color: #C0C0C0;
+  border-color: #505050;
+}
+.ui__input:focus {
+  border-color: #33B7BC;
+  color: #fff;
+}
+.ui__input:invalid {
+  border-color: #D34B4B;
+  color: #D34B4B;
+}
+.ui__input:disabled {
+  opacity: 0.5;
+}
+.ui__select {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.ui__select::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.ui__select-dropdown {
+  min-width: 188px;
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  background: rgba(32, 32, 32, 0.4);
+  border: 1px solid #313131;
+  border-radius: 14px;
+  padding: 25px;
+  display: flex;
+  opacity: 0;
+  transform: scale(0);
+  flex-direction: column;
+  gap: 30px;
+}
+.ui__select-dropdown-item {
+  position: relative;
+  font-family: "Stolzl";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: none;
+  color: #fff;
+}
+.ui__select-dropdown-item:hover {
+  color: #33B7BC;
+}
+.ui__select-dropdown-item::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: calc(100% + 15px);
+  right: 0;
+  left: 0;
+  background-color: #323232;
+}
+.ui__select-dropdown-item:last-child::before {
+  content: none;
+}
+.ui__select:hover > span {
+  transform: rotate(180deg);
+}
+.ui__select:hover > span > svg > * {
+  fill: #33B7BC;
+}
+.ui__select:hover .ui__select-dropdown {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.header {
+  padding: 40px 0;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__left, .header__right {
+  display: flex;
+  -moz-column-gap: 59px;
+       column-gap: 59px;
+  align-items: center;
+}
+.header__burger {
+  position: relative;
+  width: 71px;
+  height: 11px;
+  cursor: pointer;
+}
+.header__burger::before, .header__burger::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background-color: #fff;
+  transform: skewX(-70deg);
+}
+.header__burger::before {
+  top: 0;
+  right: 0;
+}
+.header__burger::after {
+  bottom: 0;
+  left: 0;
+}
+.header__burger:hover::before, .header__burger:hover::after {
+  background-color: #33B7BC;
+}
+.header__burger:hover::before {
+  left: 0;
+  right: unset;
+}
+.header__burger:hover::after {
+  right: 0;
+  left: unset;
+}
+.header__nav {
+  display: flex;
+  -moz-column-gap: 58px;
+       column-gap: 58px;
+}
+.header__nav-list {
+  position: relative;
+  font-family: "Stolzl";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: none;
+  color: #D7D7D7;
+}
+.header__nav-list::before {
+  content: "";
+  position: absolute;
+  bottom: 1.5px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  transform: skewX(-20deg);
+  background-color: #33B7BC;
+  z-index: -1;
+}
+.header__nav-list:hover {
+  color: #fff;
+}
+.header__nav-list:hover::before {
+  width: 100%;
+}
+.header__handlers {
+  display: flex;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+}
+.header__handlers-items {
+  font-family: "Stolzl";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: none;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
