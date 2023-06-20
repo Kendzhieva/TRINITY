@@ -1,4 +1,7 @@
 .header{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
     padding: 40px 0;
     &__row{
         display: flex;
@@ -10,10 +13,23 @@
         column-gap: 59px;
         align-items: center;
     }
+    &__logo{
+        position: relative;
+        z-index: 110;
+        max-width: 147px;
+        margin: 0 25px;
+        text-align: center;
+        & > svg{
+            &:nth-child(2){
+                margin: 22px 0 15px;
+            }
+        }
+    }
     &__burger{
         position: relative;
+        z-index: 110;
         width: 71px;
-        height: 11px;
+        height: 41px;
         cursor: pointer;
         &::before, &::after{
             content: '';
@@ -24,14 +40,14 @@
             transform: skewX(-70deg);
         }
         &::before{
-            top: 0;
+            top: 15px;
             right: 0;
         }
         &::after{
-            bottom: 0;
+            bottom: 15px;
             left: 0;
         }
-        &:hover{
+        &:not(&--active):hover{
             &::before, &::after{
                 background-color: #33B7BC;
             }
@@ -44,13 +60,35 @@
                 left: unset;
             }
         }
+        &--active{
+            &::before, &::after{
+                width: 65px;
+                height: 2px;
+                left: unset;
+                right: unset;
+                top: 50%;
+            } 
+            &::before{
+                transform: rotate(-45deg);
+            }
+            &::after{
+                transform: rotate(45deg);
+            }
+            &:hover{
+                &::before, &::after{
+                    background-color: #33B7BC;
+                }
+            }
+        }
     }
     &__nav{
         display: flex;
         column-gap: 58px;
         &-list{
+            text-align: center;
             position: relative;
-            @include font ('Stolzl', normal, 500, 15px, none, #D7D7D7);
+            @include font ('Stolzl', normal, 500, none, #D7D7D7);
+            @include fontSize (15, 15);
             &::before{
                 content: '';
                 position: absolute;
@@ -74,7 +112,111 @@
         display: flex;
         column-gap: 60px;
         &-items{
-            @include font ('Stolzl', normal, 700, 16px, none, #fff);
+            @include font ('Stolzl', normal, 700, none, #fff);
+            @include fontSize (16, 13);
+            white-space: nowrap;
+        }
+    }
+    &__menu{
+        position: fixed;
+        left: 0;
+        top: -150vh;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        padding: 268px 218px;
+        background: linear-gradient(60.07deg, rgba(22, 21, 22, 0.98) 43.23%, rgba(22, 21, 22, 0.75) 63.47%), url(../images/header/bcg-header-menu.png) left/cover no-repeat;
+        &--active{
+            top: 0;
+            bottom: 0;
+        }
+        
+        &-list{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-height: calc(100vh - 552px);
+            min-height: 120px;
+            height: 100%;
+            gap: 50px 40px;
+            width: 100%;
+            overflow-x: scroll;
+            padding: 20px 0;
+        }
+        &-link{
+            position: relative;
+            @include font ('Stolzl', normal, 500, none, #76828C);
+            @include fontSize (54, 20);
+            width: fit-content;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 7px;
+                left: 0;
+                width: 0;
+                height: 10px;
+                transform: skewX(-20deg);
+                background-color: #33B7BC;
+                z-index: -1;
+            }
+            &:hover{
+                color: #fff;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+        &-footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px 214px 50px 218px;
+            border-top: 1px solid #272727;
+            &-wrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        &-address{
+            @include font ('Stolzl', normal, 400, 24px, none, #76828C);
+        }
+        &-tel{
+            @include font ('Stolzl', normal, 700, none, #fff);
+            @include fontSize (34, 20);
+        }
+    }
+}
+
+@media (max-width: 1241px){
+    .header{
+        &__menu{
+            padding-inline: 40px;
+            &-address{
+                display: none;
+            }
+            &-footer{
+                padding-inline: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1101px){
+    .header{
+        &__nav{
+            display: none;
+        }
+        &__handlers{
+            &-items:nth-child(1), &-items:nth-child(2){
+                display: none;
+            }
+        }
+        &__logo{
+            & > svg:nth-child(2), & > svg:nth-child(3){
+                display: none;
+            }
         }
     }
 }
