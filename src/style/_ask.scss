@@ -1,0 +1,12 @@
+.ask{
+    &__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__map{
+        width: 55%;
+    }
+    &__form{
+        width: 45%;
+    }
+}

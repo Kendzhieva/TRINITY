@@ -46,9 +46,20 @@ img{
     padding: 0 20px;
 }
 
-//базовые 
+//Variabels
+$color-one: #33B7BC;
+$color-two: #2EACB0;
+$color-tree: #22ECF3;
+$color-four: #245C5F;
+$color-text-one: #D7D7D7;
+$color-text-two: #76828C;
+$color-error: #D34B4B;
+
+//Base styles
 @import "_mixins.scss";
 @import "_ui-kit.scss";
-//секции
+
+//section
 @import "_header.scss";
 @import "_intro.scss";
+@import "_ask.scss";

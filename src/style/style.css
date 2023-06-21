@@ -50,12 +50,19 @@ img {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
   line-height: 24px;
-  color: #FFF;
+  color: #fff;
+  font-size: calc(16px + 0 * (100vw - 320px) / 1600);
   text-align: center;
   border-radius: 10px;
   padding: 11px 77px;
+}
+.ui__button--primary {
+  background: #33B7BC;
+}
+.ui__button--secondary {
+  background: transparent;
+  border: 2px solid #33B7BC;
 }
 .ui__button:not(:disabled):hover {
   background: #2EACB0;
@@ -69,18 +76,10 @@ img {
   background: #2EACB0;
   cursor: unset;
 }
-.ui__button--primary {
-  background: #33B7BC;
-}
-.ui__button--secondary {
-  background: transparent;
-  border: 2px solid #33B7BC;
-}
 .ui__input {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 0;
   color: #fff;
   padding: 16px 0 16px 30px;
@@ -145,7 +144,6 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
   line-height: none;
   color: #fff;
 }
@@ -221,6 +219,24 @@ img {
 }
 .ui__fixed-media-button:hover::before, .ui__fixed-media-button:hover::after {
   transform: scale(1);
+}
+@media (max-width: 770px) {
+  .ui__fixed-media-button {
+    width: 40px;
+    height: 40px;
+  }
+  .ui__fixed-media-button > svg {
+    width: 22px;
+    height: 22px;
+  }
+  .ui__fixed-media-button::after {
+    width: 56px;
+    height: 56px;
+  }
+  .ui__fixed-media-button::before {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .header {
@@ -311,9 +327,9 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
   line-height: none;
   color: #D7D7D7;
+  font-size: calc(15px + 0 * (100vw - 320px) / 1600);
 }
 .header__nav-list::before {
   content: "";
@@ -341,9 +357,9 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
   line-height: none;
   color: #fff;
+  font-size: calc(13px + 3 * (100vw - 320px) / 1600);
   white-space: nowrap;
 }
 .header__menu {
@@ -377,9 +393,9 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 500;
-  font-size: 54px;
   line-height: none;
   color: #76828C;
+  font-size: calc(20px + 34 * (100vw - 320px) / 1600);
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -417,7 +433,6 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
   line-height: none;
   color: #76828C;
 }
@@ -425,9 +440,9 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 700;
-  font-size: 34px;
   line-height: none;
   color: #fff;
+  font-size: calc(20px + 14 * (100vw - 320px) / 1600);
 }
 
 @media (max-width: 1241px) {
@@ -467,15 +482,26 @@ img {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 500;
-  font-size: 120px;
   line-height: none;
   color: #fff;
+  font-size: calc(60px + 60 * (100vw - 320px) / 1600);
 }
 .intro__subtitle {
   font-family: "Stolzl";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
   line-height: none;
   color: #fff;
+  font-size: calc(17px + 15 * (100vw - 320px) / 1600);
+}
+
+.ask__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ask__map {
+  width: 55%;
+}
+.ask__form {
+  width: 45%;
 }/*# sourceMappingURL=style.css.map */

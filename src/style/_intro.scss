@@ -9,11 +9,11 @@
         gap: 25px;
     }
     &__title{
-        @include font ('Stolzl', normal, 500, none, #fff);
-        @include fontSize (120, 60);
+        @include font('Stolzl', normal, 500, none, #fff);
+        @include fontSize(120, 60);
     }
     &__subtitle{
-        @include font ('Stolzl', normal, 400, none, #fff);
-        @include fontSize (32, 17);
+        @include font('Stolzl', normal, 400, none, #fff);
+        @include fontSize(32, 17);
     }
 }

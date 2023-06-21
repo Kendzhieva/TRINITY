@@ -1,33 +1,32 @@
 .ui{
     &__button{
-        @include font ('Montserrat', normal, 500, 24px, #FFF);
+        @include font ('Montserrat', normal, 500, 24px, #fff);
         @include fontSize (16, 16);
         text-align: center;
         border-radius: 10px;
         padding: 11px 77px;
-        &:not(:disabled):hover{
-            background: #2EACB0;
-            box-shadow: 0px 0px 20px #245C5F;
-        }
-        &:focus{
-            background: #2EACB0;
-        }
-        &:disabled{
-            opacity: 0.3;
-            background: #2EACB0;
-            cursor: unset;
-        }
-        
         &--primary{
-            background: #33B7BC;
+            background: $color-one;
         }
         &--secondary{
             background: transparent;
-            border: 2px solid #33B7BC;
+            border: 2px solid $color-one;
+        }
+        &:not(:disabled):hover{
+            background: $color-two;
+            box-shadow: 0px 0px 20px $color-four;
+        }
+        &:focus{
+            background: $color-two;
+        }
+        &:disabled{
+            opacity: 0.3;
+            background: $color-two;
+            cursor: unset;
         }
     }
     &__input{
-        @include font ('Stolzl', normal, 400, 14px, 0, #fff);
+        @include font ('Stolzl', normal, 400, 0, #fff);
         padding: 16px 0 16px 30px;
         background: linear-gradient(90.75deg, #1C1C1C 0.65%, rgba(27, 27, 27, 0.4) 107.06%);
         border-radius: 10px;
@@ -41,12 +40,12 @@
             border-color: #505050;
         }
         &:focus{
-            border-color: #33B7BC;
+            border-color: $color-one;
             color: #fff;
         }
         &:invalid{
-            border-color: #D34B4B;
-            color: #D34B4B;
+            border-color: $color-error;
+            color: $color-error;
         }
         &:disabled{
             opacity: 0.5;
@@ -82,9 +81,9 @@
             gap: 30px;
             &-item{
                 position: relative;
-                @include font ('Stolzl', normal, 500, 15px, none, #fff);
+                @include font ('Stolzl', normal, 500, none, #fff);
                 &:hover{
-                    color: #33B7BC;
+                    color: $color-one;
                 }
                 &::before{
                     content: '';
@@ -108,7 +107,7 @@
                 transform: rotate(180deg);
                 & > svg{
                     & > * {
-                        fill:#33B7BC;
+                        fill: $color-one;
                     }
                 }
             }
@@ -133,6 +132,9 @@
             display: grid;
             place-items: center;
             cursor: pointer;
+
+
+
             &::before, &::after{
                 content: '';
                 position: absolute;
@@ -163,6 +165,22 @@
             &:hover{
                 &::before, &::after{
                     transform: scale(1);
+                }
+            }
+            @media (max-width: 770px) {
+                width: 40px;
+                height: 40px;
+                & > svg{
+                    width: 22px;
+                    height: 22px;
+                }
+                &::after{
+                    width: 56px;
+                    height: 56px;
+                }
+                &::before{
+                    width: 48px;
+                    height: 48px;
                 }
             }
         }
