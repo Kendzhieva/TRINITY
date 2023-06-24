@@ -10,7 +10,7 @@
         }
         &--secondary{
             background: transparent;
-            border: 2px solid $color-one;
+            border: 3px solid $color-one;
         }
         &:not(:disabled):hover{
             background: $color-two;
@@ -27,10 +27,11 @@
     }
     &__input{
         @include font ('Stolzl', normal, 400, 0, #fff);
+        @include fontSize(20, 15);
         padding: 16px 0 16px 30px;
         background: linear-gradient(90.75deg, #1C1C1C 0.65%, rgba(27, 27, 27, 0.4) 107.06%);
         border-radius: 10px;
-        border: 2px solid;
+        border: 3px solid;
         border-color: #434343;
         &::placeholder{
             color: #707070;

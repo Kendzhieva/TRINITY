@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #2B2B2B;
+    background-color: #161516;
 }
 
 button{
@@ -15,9 +15,13 @@ button{
     cursor: pointer;
 }
 
-input{
+input, textarea{
     border: none;
     outline: none;
+}
+
+textarea{
+    resize: none;
 }
 
 ul, ol{
@@ -63,3 +67,4 @@ $color-error: #D34B4B;
 @import "_header.scss";
 @import "_intro.scss";
 @import "_ask.scss";
+@import "_who-person.scss";
